@@ -13,7 +13,7 @@
         <!--WishListApp-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WishListApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="WishListApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -39,7 +39,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="195" id="XGz-8Q-SJB">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Item Cell" rowHeight="195" id="XGz-8Q-SJB" customClass="ItemCell" customModule="WishListApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="195"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XGz-8Q-SJB" id="jrI-A6-fn5">
@@ -109,6 +109,12 @@
                                                 <constraint firstItem="5tU-cl-chR" firstAttribute="leading" secondItem="jrI-A6-fn5" secondAttribute="leadingMargin" id="rAx-xB-gl5"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="details" destination="bTc-X8-htc" id="mQT-RQ-YIc"/>
+                                            <outlet property="price" destination="0PH-d5-IGV" id="V4w-U0-iRc"/>
+                                            <outlet property="thumb" destination="6Zm-Y5-R5u" id="y3w-Li-tCd"/>
+                                            <outlet property="title" destination="VKV-x9-Ut9" id="POs-hk-8Lp"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -129,6 +135,10 @@
                             <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="segment" destination="K4y-h4-paq" id="ka1-6g-lFa"/>
+                        <outlet property="tableView" destination="geY-5z-jFT" id="nJc-mw-U2W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
