@@ -24,23 +24,48 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         tableView.delegate = self
         tableView.dataSource = self
         
+        attemptFetch()
+        
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
+        configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
+        return cell
+    }
+    
+    //This updates the cell, logic for configureCell is in 'ItemCell View'
+    func configureCell(cell: ItemCell, indexPath: NSIndexPath) {
+    
+        let item = controller.object(at: indexPath as IndexPath)
+        cell.configureCell(item: item)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 0
+        if let sections = controller.sections {
+            
+            let sectionInfo = sections[section]
+            return sectionInfo.numberOfObjects
+        }
         
+        return 0
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         
+        if let sections = controller.sections {
+            return sections.count
+        }
+        
         return 0
         
+    }
+    
+    //keeps rows at height on storyboard
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 175
     }
     
     func attemptFetch() {
@@ -51,6 +76,8 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         fetchRequest.sortDescriptors = [dateSort]
         
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        
+        self.controller = controller
         
         do {
             try controller.performFetch()
@@ -73,6 +100,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         tableView.endUpdates()
     }
 
+    //below is CRUD system...guessing i'll be copying this code soon
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         
         switch(type) {
@@ -82,22 +110,26 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
                 tableView.insertRows(at: [indexPath], with: .fade)
             }
             break
+            
         case.delete:
             if let indexPath = indexPath {
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
             break
+            
         case.update:
             if let indexPath = indexPath {
                 let cell = tableView.cellForRow(at: indexPath) as! ItemCell
+                configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
             }
             break
+            
         case.move:
             if let indexPath = indexPath {
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
             if let indexPath = newIndexPath {
-                tableView.insertRows(at: [indexPath], with: <#T##UITableViewRowAnimation#>)
+                tableView.insertRows(at: [indexPath], with: .fade)
             }
             break
         }
@@ -107,9 +139,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     
     
     
-    
-    
-    
+
     
 }
 
