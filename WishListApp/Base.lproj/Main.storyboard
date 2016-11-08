@@ -39,7 +39,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="175" id="XGz-8Q-SJB" customClass="ItemCell" customModule="WishListApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="175" id="XGz-8Q-SJB" customClass="ItemCell" customModule="WishListApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="175"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XGz-8Q-SJB" id="jrI-A6-fn5">
@@ -173,6 +173,9 @@
                                     <constraint firstAttribute="height" constant="100" id="Qpy-q6-CbX"/>
                                     <constraint firstAttribute="width" constant="100" id="pMN-FV-tSP"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="addImage:" destination="eyd-AG-rE4" eventType="touchUpInside" id="5er-Gf-IzD"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GIe-qr-S0U">
                                 <rect key="frame" x="124" y="82" width="235" height="40"/>
@@ -263,12 +266,16 @@
                     <navigationItem key="navigationItem" title="Add/Edit" id="v9V-Ma-Wuo">
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="WOF-aK-W31">
                             <color key="tintColor" red="1" green="0.31424917229999999" blue="0.35063728700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="deletePressed:" destination="eyd-AG-rE4" id="yYz-4L-e8b"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="PriceField" destination="Jug-1F-UBf" id="gyg-Yd-2ca"/>
                         <outlet property="detailsField" destination="5B6-dc-zuX" id="cCj-Pg-SeK"/>
                         <outlet property="storePicker" destination="xS6-hz-0L0" id="mC2-jz-gLJ"/>
+                        <outlet property="thumbImage" destination="leA-D6-TjB" id="KAM-Dx-jQS"/>
                         <outlet property="titleField" destination="GIe-qr-S0U" id="qBM-Oo-fjp"/>
                     </connections>
                 </viewController>
