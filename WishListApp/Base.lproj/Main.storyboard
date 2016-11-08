@@ -174,7 +174,7 @@
                                     <constraint firstAttribute="width" constant="100" id="pMN-FV-tSP"/>
                                 </constraints>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GIe-qr-S0U" customClass="CustomTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GIe-qr-S0U">
                                 <rect key="frame" x="124" y="82" width="235" height="40"/>
                                 <color key="backgroundColor" red="0.92146831750000002" green="0.92162626979999995" blue="0.92145836349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -184,7 +184,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jug-1F-UBf" customClass="CustomTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jug-1F-UBf">
                                 <rect key="frame" x="124" y="132" width="235" height="40"/>
                                 <color key="backgroundColor" red="0.92146831750000002" green="0.92162626979999995" blue="0.92145836349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -194,7 +194,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Details" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5B6-dc-zuX" customClass="CustomTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Details" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5B6-dc-zuX">
                                 <rect key="frame" x="16" y="182" width="343" height="60"/>
                                 <color key="backgroundColor" red="0.92146831750000002" green="0.92162626979999995" blue="0.92145836349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -220,6 +220,9 @@
                                 <state key="normal" title="Save Item">
                                     <color key="titleColor" red="0.92146831750000002" green="0.92162626979999995" blue="0.92145836349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="savePressed:" destination="eyd-AG-rE4" eventType="touchUpInside" id="dJm-Iv-yn7"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Store" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ul1-M9-Wk6">
                                 <rect key="frame" x="106.5" y="343" width="162" height="32"/>
@@ -262,6 +265,12 @@
                             <color key="tintColor" red="1" green="0.31424917229999999" blue="0.35063728700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="PriceField" destination="Jug-1F-UBf" id="gyg-Yd-2ca"/>
+                        <outlet property="detailsField" destination="5B6-dc-zuX" id="cCj-Pg-SeK"/>
+                        <outlet property="storePicker" destination="xS6-hz-0L0" id="mC2-jz-gLJ"/>
+                        <outlet property="titleField" destination="GIe-qr-S0U" id="qBM-Oo-fjp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CVF-fY-DJr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -272,7 +281,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dbD-6b-WeJ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Cpr-us-vTd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Cpr-us-vTd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
