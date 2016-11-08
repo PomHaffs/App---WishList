@@ -23,9 +23,10 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         
         tableView.delegate = self
         tableView.dataSource = self
-        
+       
+        generateTestData()
         attemptFetch()
-        
+       
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -135,7 +136,28 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         }
     }
     
-    
+    //like seeding the database
+    func generateTestData() {
+        
+        let item = Item(context: context)
+        item.title = "MacBook Pro"
+        item.price = 2500
+        item.details = "I want one now because of the Touch Bar"
+        
+        let item2 = Item(context: context)
+        item2.title = "Bose Headphones"
+        item2.price = 300
+        item2.details = "Music for my ears, quality tunes"
+        
+        let item3 = Item(context: context)
+        item3.title = "Tesla Model S"
+        item3.price = 160000
+        item3.details = "Full of batteries to make it go nice a quiet"
+
+        //this actually put info into database - migration
+        ad.saveContext()
+        
+    }
     
     
     

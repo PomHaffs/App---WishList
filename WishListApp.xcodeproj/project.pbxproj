@@ -23,6 +23,7 @@
 		FEF40E661DD037CE00F74529 /* Store+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF40E5E1DD037CE00F74529 /* Store+CoreDataProperties.swift */; };
 		FEF40E6B1DD0421700F74529 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF40E6A1DD0421700F74529 /* MaterialView.swift */; };
 		FEF40E6D1DD0449D00F74529 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF40E6C1DD0449D00F74529 /* ItemCell.swift */; };
+		FEF40E721DD14F9F00F74529 /* ItemDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF40E711DD14F9F00F74529 /* ItemDetailsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		FEF40E5E1DD037CE00F74529 /* Store+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Store+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FEF40E6A1DD0421700F74529 /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
 		FEF40E6C1DD0449D00F74529 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		FEF40E711DD14F9F00F74529 /* ItemDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 		FEF40E2F1DD02F8D00F74529 /* WishListApp */ = {
 			isa = PBXGroup;
 			children = (
+				FEF40E6E1DD1487E00F74529 /* Controller */,
 				FEF40E691DD041E700F74529 /* View */,
 				FEF40E681DD037F600F74529 /* Generated */,
 				FEF40E671DD037EE00F74529 /* Model */,
@@ -119,6 +122,14 @@
 				FEF40E6C1DD0449D00F74529 /* ItemCell.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		FEF40E6E1DD1487E00F74529 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FEF40E711DD14F9F00F74529 /* ItemDetailsVC.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +209,7 @@
 				FEF40E621DD037CE00F74529 /* Item+CoreDataProperties.swift in Sources */,
 				FEF40E611DD037CE00F74529 /* Item+CoreDataClass.swift in Sources */,
 				FEF40E641DD037CE00F74529 /* ItemType+CoreDataProperties.swift in Sources */,
+				FEF40E721DD14F9F00F74529 /* ItemDetailsVC.swift in Sources */,
 				FEF40E6B1DD0421700F74529 /* MaterialView.swift in Sources */,
 				FEF40E391DD02F8D00F74529 /* WishListApp.xcdatamodeld in Sources */,
 				FEF40E661DD037CE00F74529 /* Store+CoreDataProperties.swift in Sources */,
@@ -370,6 +382,7 @@
 				FEF40E441DD02F8D00F74529 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
